@@ -589,6 +589,15 @@ function Card({ children, style }) {
   );
 }
 
+function Wrap({ children }) {
+  return (
+    <div style={{fontFamily:"'Segoe UI',sans-serif", direction:"rtl", padding:14, background:"linear-gradient(160deg,#f8f4ee,#eee8dc)", minHeight:"100vh"}}>
+      <LogoHeader/>
+      {children}
+    </div>
+  );
+}
+
 // =====================================================
 // ADMIN VIEW
 // =====================================================
@@ -688,13 +697,6 @@ export default function App() {
   };
 
   if (step === "admin") return <AdminView onBack={() => setStep("welcome")}/>;
-
-  const Wrap = ({ children }) => (
-    <div style={{fontFamily:"'Segoe UI',sans-serif", direction:"rtl", padding:14, background:"linear-gradient(160deg,#f8f4ee,#eee8dc)", minHeight:"100vh"}}>
-      <LogoHeader/>
-      {children}
-    </div>
-  );
 
   if (step === "welcome") return (
     <Wrap>
